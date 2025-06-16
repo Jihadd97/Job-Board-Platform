@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use function Laravel\Prompts\table;
+
 return new class extends Migration
 {
     /**
@@ -13,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('job_listings', function (Blueprint $table) {
             $table->id();
+            //foreign id called employer_id (for every single job listing there's an employer_id column that points to the corresponding employer)
+            $table->unsignedBigInteger('employer_id');
             $table->string('title');
             $table->string('salary');
             $table->timestamps();

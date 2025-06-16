@@ -18,6 +18,7 @@ use App\Models\Job;
 
 
 Route::get('/', function () {
+   
     return view('home');
 });
 Route::get('/jobs', function () {
@@ -33,3 +34,4 @@ Route::get('/jobs/{id}', function ($id) {
 Route::get('/contact', function () {
     return view('contact');
 });
+
